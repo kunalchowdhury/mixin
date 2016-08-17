@@ -33,9 +33,9 @@ public:
 
     void publish(const message& message);
 
-    void subscribe(string topic);
+    void subscribe(const string& topic);
 
-    void unsubscribe(string topic);
+    void unsubscribe(const string& topic);
 
     virtual ~solace_pub_sub();
 

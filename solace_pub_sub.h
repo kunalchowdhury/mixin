@@ -31,16 +31,19 @@ public:
 
     void init();
 
+    void inc();
+
     void publish(const message& message);
 
-    void subscribe(const string& topic);
+    void subscribe(string topic);
 
-    void unsubscribe(const string& topic);
+    void unsubscribe(string topic);
 
     virtual ~solace_pub_sub();
 
 private :
-
+    volatile int _lock;
+    int _cur;
     string hostname, user_name, vpn_name;
 };
 
